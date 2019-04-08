@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Filtro 1</title>
+    <link rel="stylesheet" href="filtro1.css">
+    <script src="filtro1.js"></script>
+  </head>
+  <body onload="main();">
+    <p>Imagen original</p>
+    <img src="logoURJC.png" id="imagesrc">
+    <p>Imagen manipulada</p>
+    <canvas id="display"></canvas>
+    <input type="range" id="deslizador_r" min="0" max="255" value="255"/>
+    <p id="range_value_r">00</p>
+    <br>
+    <input type="range" id="deslizador_a" min="0" max="255" value="255"/>
+    <p id="range_value_a">00</p>
+    <br>
+    <input type="range" id="deslizador_v" min="0" max="255" value="255"/>
+    <p id="range_value_v">00</p>
+  </body>
+</html>
