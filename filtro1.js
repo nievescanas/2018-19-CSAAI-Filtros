@@ -28,11 +28,6 @@ function filtro_color(data,umbral,color){
   return data;
 }
 
-function imagen(){
-
-}
-
-
 function main() {
   console.log("En main()....")
 

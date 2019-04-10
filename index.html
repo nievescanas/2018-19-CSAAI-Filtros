@@ -7,17 +7,37 @@
     <script src="filtro1.js"></script>
   </head>
   <body onload="main();">
-    <p>Imagen original</p>
-    <img src="logoURJC.png" id="imagesrc">
-    <p>Imagen manipulada</p>
-    <canvas id="display"></canvas>
-    <input type="range" id="deslizador_r" min="0" max="255" value="255"/>
-    <p id="range_value_r">00</p>
-    <br>
-    <input type="range" id="deslizador_a" min="0" max="255" value="255"/>
-    <p id="range_value_a">00</p>
-    <br>
-    <input type="range" id="deslizador_v" min="0" max="255" value="255"/>
-    <p id="range_value_v">00</p>
+    <div class="ex0">
+      <img src="logo.png" width="500" height="70">
+    </div>
+    <div class="ex1">
+      <div class="box">
+        <div class="center">
+          <img src="logoURJC.png" id="imagesrc">
+          <p>Imagen original</p>
+          </div>
+      </div>
+      <div class="box">
+        <div class="center">
+          <canvas id="display"></canvas>
+          <p>Imagen manipulada</p>
+          </div>
+      </div>
+    </div>
+    <div class="ex2">
+      <div class="ex3">
+        <input type="range" id="deslizador_r" min="0" max="255" value="255"/>
+        <p id="range_value_r">00</p>
+        <br>
+        <input type="range" id="deslizador_a" min="0" max="255" value="255"/>
+        <p id="range_value_a">00</p>
+        <br>
+        <input type="range" id="deslizador_v" min="0" max="255" value="255"/>
+        <p id="range_value_v">00</p>
+      </div>
+    </div>
+
+
+
   </body>
 </html>
