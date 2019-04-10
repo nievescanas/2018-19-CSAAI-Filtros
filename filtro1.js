@@ -1,3 +1,38 @@
+
+function filtro_color(data,umbral,color){
+  var incremento = 0;
+  var i=0;
+
+  switch (color) {
+  case 'rojo':
+    incremento = 0;
+    break;
+  case 'azul':
+    incremento = 1;
+    break;
+  case 'verde':
+    incremento = 2;
+    break;
+  case 'luma':
+    incremento = 3;
+    break;
+  default:
+    incremento = 0;
+    break;
+  }
+
+  for (var i = i+incremento; i < data.length; i+=4) {
+    if (data[i] > umbral)
+      data[i] = umbral;
+  }
+  return data;
+}
+
+function imagen(){
+
+}
+
+
 function main() {
   console.log("En main()....")
 
@@ -25,86 +60,50 @@ function main() {
   //-- Obtener el contexto del canvas para
   //-- trabajar con el
   var ctx = canvas.getContext("2d");
-
-  //-- Situar la imagen original en el canvas
-  //-- No se han hecho manipulaciones todavia
   ctx.drawImage(img, 0,0);
-
-
-  //-- Obtener la imagen del canvas en pixeles
-  var imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-
-  //-- Obtener el array con todos los píxeles
-  var data = imgData.data
 
   //-- Funcion de retrollamada del deslizador
   deslizador_r.oninput = () => {
+    ctx.drawImage(img, 0,0);
+    //-- Obtener la imagen del canvas en pixeles
+    imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    //-- Obtener el array con todos los píxeles
+    data = imgData.data
     //-- Mostrar el nuevo valor del deslizador
     range_value_r.innerHTML = deslizador_r.value
-
-    //-- Obtener el umbral de rojo del desliador
     umbral = deslizador_r.value
 
-    //-- Filtrar la imagen según el nuevo umbral
-    for (var i = 0; i < data.length; i+=4) {
-      if (data[i] > umbral)
-        data[i] = umbral;
-    }
-
+    data = filtro_color(data,umbral,'rojo')
     //-- Poner la imagen modificada en el canvas
     ctx.putImageData(imgData, 0, 0);
   }
   //-- Funcion de retrollamada del deslizador
   deslizador_a.oninput = () => {
+    ctx.drawImage(img, 0,0);
+    //-- Obtener la imagen del canvas en pixeles
+    imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    //-- Obtener el array con todos los píxeles
+     data = imgData.data
     //-- Mostrar el nuevo valor del deslizador
     range_value_a.innerHTML = deslizador_a.value
-
-    //-- Situar la imagen original en el canvas
-    //-- No se han hecho manipulaciones todavia
-    ctx.drawImage(img, 0,0);
-
-    //-- Obtener la imagen del canvas en pixeles
-    var imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-
-    //-- Obtener el array con todos los píxeles
-    var data = imgData.data
-
-    //-- Obtener el umbral de rojo del desliador
     umbral = deslizador_a.value
 
-    //-- Filtrar la imagen según el nuevo umbral
-    for (var i = 2; i < data.length; i+=4) {
-      if (data[i] > umbral)
-        data[i] = umbral;
-    }
-
+    data = filtro_color(data,umbral,'azul')
     //-- Poner la imagen modificada en el canvas
     ctx.putImageData(imgData, 0, 0);
   }
   //-- Funcion de retrollamada del deslizador
   deslizador_v.oninput = () => {
+    ctx.drawImage(img, 0,0);
+    //-- Obtener la imagen del canvas en pixeles
+    imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    //-- Obtener el array con todos los píxeles
+    data = imgData.data
     //-- Mostrar el nuevo valor del deslizador
     range_value_v.innerHTML = deslizador_v.value
-
-    //-- Situar la imagen original en el canvas
-    //-- No se han hecho manipulaciones todavia
-    ctx.drawImage(img, 0,0);
-
-    //-- Obtener la imagen del canvas en pixeles
-    var imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-
-    //-- Obtener el array con todos los píxeles
-    var data = imgData.data
-
-    //-- Obtener el umbral de rojo del desliador
     umbral = deslizador_v.value
 
-    //-- Filtrar la imagen según el nuevo umbral
-    for (var i = 1; i < data.length; i+=4) {
-      if (data[i] > umbral)
-        data[i] = umbral;
-    }
-
+    data = filtro_color(data,umbral,'verde')
     //-- Poner la imagen modificada en el canvas
     ctx.putImageData(imgData, 0, 0);
   }
