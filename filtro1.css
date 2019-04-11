@@ -31,16 +31,24 @@ div.ex2 {
 }
 div.ex3 {
   height: 100px;
-  width: 600px;
+  width: 800px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color:#ede7e5;
+  box-shadow: 5px 5px 25px #222 inset;
+}
+
+div.ex4 {
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color:#BDBDBD;
-  box-shadow: 5px 5px 25px #222 inset;
 }
   * {
   box-sizing: border-box;
 }
+.com
   .box{
     float: left;
     width: 50%;
@@ -55,3 +63,12 @@ div.ex3 {
     text-align: center;
     font-size: 18px;
   }
+  ::-webkit-scrollbar-track {
+      background-color: blue;
+}
+button{
+
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 10px 10px 40px;
+}

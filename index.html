@@ -8,12 +8,12 @@
   </head>
   <body onload="main();">
     <div class="ex0">
-      <img src="logo.png" width="500" height="70">
+      <img src="logo.png" width="400" height="70">
     </div>
     <div class="ex1">
       <div class="box">
         <div class="center">
-          <img src="logoURJC.png" id="imagesrc">
+          <img src="black-hole.jpg" id="imagesrc">
           <p>Imagen original</p>
           </div>
       </div>
@@ -24,20 +24,24 @@
           </div>
       </div>
     </div>
+    <div class="ex4">
+      <button class = button_content type="button" id="gris"><img src="F_Gris.png" width="200" height="40"></button>
+    </div>
     <div class="ex2">
-      <div class="ex3">
-        <input type="range" id="deslizador_r" min="0" max="255" value="255"/>
+      <button class = button_content type="button" id="color"><img src="F_Color.png" width="200" height="40"></button>
+      <div class="ex3" id = "controles">
+        <p>R</p>
+        <input type="range" id="deslizador_r" min="0" max="255" value="255" />
         <p id="range_value_r">00</p>
-        <br>
-        <input type="range" id="deslizador_a" min="0" max="255" value="255"/>
-        <p id="range_value_a">00</p>
-        <br>
-        <input type="range" id="deslizador_v" min="0" max="255" value="255"/>
-        <p id="range_value_v">00</p>
+
+        <p>G</p>
+        <input type="range" id="deslizador_g" min="0" max="255" value="255"/>
+        <p id="range_value_g">00</p>
+
+        <p>B</p>
+        <input type="range" id="deslizador_b" min="0" max="255" value="255"/>
+        <p id="range_value_b">00</p>
       </div>
     </div>
-
-
-
   </body>
 </html>
